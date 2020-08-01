@@ -1,0 +1,372 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce42002a2ee7a8745822810d6e0576d5, type: 3}
+  m_Name: New ProjectMenuLayout
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  layout:
+  - id: 0
+  - id: 1
+  - id: 2
+  - id: 3
+  - id: 4
+  - id: 5
+  - id: 6
+  - id: 7
+  - id: 8
+  - id: 9
+  - id: 10
+  - id: 11
+  - id: 12
+  - id: 13
+  - id: 14
+  - id: 15
+  - id: 16
+  - id: 17
+  - id: 18
+  - id: 19
+  - id: 20
+  - id: 21
+  - id: 22
+  - id: 23
+  - id: 24
+  - id: 25
+  - id: 26
+  - id: 27
+  - id: 28
+  - id: 29
+  - id: 30
+  - id: 31
+  - id: 32
+  - id: 33
+  - id: 34
+  - id: 35
+  - id: 36
+  - id: 37
+  - id: 38
+  - id: 39
+  - id: 40
+  - id: 41
+  - id: 42
+  references:
+    version: 1
+    00000000:
+      type: {class: ProjectMenuItem, ns: CommonGames.Tools.CustomMenuLayout, asm: CommonGames.EditorTools}
+      data:
+        elementType: 1
+        separator: Please select an Element Type from the dropdown.
+        originalPath: Assets/Create/Folder
+        overridePath: New/Folder
+    00000001:
+      type: {class: ProjectMenuItem, ns: CommonGames.Tools.CustomMenuLayout, asm: CommonGames.EditorTools}
+      data:
+        elementType: 2
+        separator: Please select an Element Type from the dropdown.
+        originalPath: 
+        overridePath: 
+    00000002:
+      type: {class: ProjectMenuItem, ns: CommonGames.Tools.CustomMenuLayout, asm: CommonGames.EditorTools}
+      data:
+        elementType: 1
+        separator: Please select an Element Type from the dropdown.
+        originalPath: Assets/Create/Common-Games/Create Platfab
+        overridePath: New/Asset/Common-Games/Platfab
+    00000003:
+      type: {class: ProjectMenuItem, ns: CommonGames.Tools.CustomMenuLayout, asm: CommonGames.EditorTools}
+      data:
+        elementType: 1
+        separator: Please select an Element Type from the dropdown.
+        originalPath: Assets/Create/Common-Games/CustomFolderIcons/Rule List
+        overridePath: New/Asset/Common-Games/CustomFolderIcons/Rule List
+    00000004:
+      type: {class: ProjectMenuItem, ns: CommonGames.Tools.CustomMenuLayout, asm: CommonGames.EditorTools}
+      data:
+        elementType: 1
+        separator: Please select an Element Type from the dropdown.
+        originalPath: Assets/Create/Common-Games/CustomFolderIcons/Style
+        overridePath: New/Asset/Common-Games/CustomFolderIcons/Style
+    00000005:
+      type: {class: ProjectMenuItem, ns: CommonGames.Tools.CustomMenuLayout, asm: CommonGames.EditorTools}
+      data:
+        elementType: 1
+        separator: Please select an Element Type from the dropdown.
+        originalPath: Assets/Create/Common-Games/CustomMenuLayout/Hierarchy Layout
+          Preference
+        overridePath: New/Asset/Common-Games/CustomMenuLayout/Hierarchy Layout
+    00000006:
+      type: {class: ProjectMenuItem, ns: CommonGames.Tools.CustomMenuLayout, asm: CommonGames.EditorTools}
+      data:
+        elementType: 1
+        separator: Please select an Element Type from the dropdown.
+        originalPath: Assets/Create/Common-Games/CustomMenuLayout/Project Layout
+          Preference
+        overridePath: New/Asset/Common-Games/CustomMenuLayout/Project Layout
+    00000007:
+      type: {class: ProjectMenuItem, ns: CommonGames.Tools.CustomMenuLayout, asm: CommonGames.EditorTools}
+      data:
+        elementType: 2
+        separator: Please select an Element Type from the dropdown.
+        originalPath: 
+        overridePath: 
+    00000008:
+      type: {class: ProjectMenuItem, ns: CommonGames.Tools.CustomMenuLayout, asm: CommonGames.EditorTools}
+      data:
+        elementType: 1
+        separator: Please select an Element Type from the dropdown.
+        originalPath: Assets/Create/C# Script
+        overridePath: New/Script/MonoBehaviour
+    00000009:
+      type: {class: ProjectMenuItem, ns: CommonGames.Tools.CustomMenuLayout, asm: CommonGames.EditorTools}
+      data:
+        elementType: 2
+        separator: Please select an Element Type from the dropdown.
+        originalPath: 
+        overridePath: 
+    0000000A:
+      type: {class: ProjectMenuItem, ns: CommonGames.Tools.CustomMenuLayout, asm: CommonGames.EditorTools}
+      data:
+        elementType: 1
+        separator: Please select an Element Type from the dropdown.
+        originalPath: Assets/Create/Shader/Standard Surface Shader
+        overridePath: New/Script/Shaders/Surface Shader
+    0000000B:
+      type: {class: ProjectMenuItem, ns: CommonGames.Tools.CustomMenuLayout, asm: CommonGames.EditorTools}
+      data:
+        elementType: 1
+        separator: Please select an Element Type from the dropdown.
+        originalPath: Assets/Create/Shader/Unlit Shader
+        overridePath: New/Script/Shaders/Unlit Shader
+    0000000C:
+      type: {class: ProjectMenuItem, ns: CommonGames.Tools.CustomMenuLayout, asm: CommonGames.EditorTools}
+      data:
+        elementType: 1
+        separator: Please select an Element Type from the dropdown.
+        originalPath: Assets/Create/Shader/Image Effect Shader
+        overridePath: New/Script/Shaders/Image Effect Shader
+    0000000D:
+      type: {class: ProjectMenuItem, ns: CommonGames.Tools.CustomMenuLayout, asm: CommonGames.EditorTools}
+      data:
+        elementType: 1
+        separator: Please select an Element Type from the dropdown.
+        originalPath: Assets/Create/Shader/Compute Shader
+        overridePath: New/Script/Shaders/Compute Shader
+    0000000E:
+      type: {class: ProjectMenuItem, ns: CommonGames.Tools.CustomMenuLayout, asm: CommonGames.EditorTools}
+      data:
+        elementType: 2
+        separator: Please select an Element Type from the dropdown.
+        originalPath: 
+        overridePath: 
+    0000000F:
+      type: {class: ProjectMenuItem, ns: CommonGames.Tools.CustomMenuLayout, asm: CommonGames.EditorTools}
+      data:
+        elementType: 1
+        separator: Please select an Element Type from the dropdown.
+        originalPath: Assets/Create/Shader/Unlit Graph
+        overridePath: New/Script/Shaders/Graph/Unlit Graph
+    00000010:
+      type: {class: ProjectMenuItem, ns: CommonGames.Tools.CustomMenuLayout, asm: CommonGames.EditorTools}
+      data:
+        elementType: 1
+        separator: Please select an Element Type from the dropdown.
+        originalPath: Assets/Create/Shader/PBR Graph
+        overridePath: New/Script/Shaders/Graph/PBR Graph
+    00000011:
+      type: {class: ProjectMenuItem, ns: CommonGames.Tools.CustomMenuLayout, asm: CommonGames.EditorTools}
+      data:
+        elementType: 2
+        separator: Please select an Element Type from the dropdown.
+        originalPath: 
+        overridePath: 
+    00000012:
+      type: {class: ProjectMenuItem, ns: CommonGames.Tools.CustomMenuLayout, asm: CommonGames.EditorTools}
+      data:
+        elementType: 1
+        separator: Please select an Element Type from the dropdown.
+        originalPath: Assets/Create/Shader/Sub Graph
+        overridePath: New/Script/Shaders/Graph/Sub-Graph
+    00000013:
+      type: {class: ProjectMenuItem, ns: CommonGames.Tools.CustomMenuLayout, asm: CommonGames.EditorTools}
+      data:
+        elementType: 2
+        separator: Please select an Element Type from the dropdown.
+        originalPath: 
+        overridePath: 
+    00000014:
+      type: {class: ProjectMenuItem, ns: CommonGames.Tools.CustomMenuLayout, asm: CommonGames.EditorTools}
+      data:
+        elementType: 1
+        separator: Please select an Element Type from the dropdown.
+        originalPath: Assets/Create/Shader/Shader Variant Collection
+        overridePath: New/Script/Shaders/Shader Variant Collection
+    00000015:
+      type: {class: ProjectMenuItem, ns: CommonGames.Tools.CustomMenuLayout, asm: CommonGames.EditorTools}
+      data:
+        elementType: 2
+        separator: Please select an Element Type from the dropdown.
+        originalPath: 
+        overridePath: 
+    00000016:
+      type: {class: ProjectMenuItem, ns: CommonGames.Tools.CustomMenuLayout, asm: CommonGames.EditorTools}
+      data:
+        elementType: 1
+        separator: Please select an Element Type from the dropdown.
+        originalPath: Assets/Create/Scene
+        overridePath: New/Scene
+    00000017:
+      type: {class: ProjectMenuItem, ns: CommonGames.Tools.CustomMenuLayout, asm: CommonGames.EditorTools}
+      data:
+        elementType: 1
+        separator: Please select an Element Type from the dropdown.
+        originalPath: Assets/Create/Multi-Scene
+        overridePath: New/Multi-Scene
+    00000018:
+      type: {class: ProjectMenuItem, ns: CommonGames.Tools.CustomMenuLayout, asm: CommonGames.EditorTools}
+      data:
+        elementType: 2
+        separator: Please select an Element Type from the dropdown.
+        originalPath: 
+        overridePath: 
+    00000019:
+      type: {class: ProjectMenuItem, ns: CommonGames.Tools.CustomMenuLayout, asm: CommonGames.EditorTools}
+      data:
+        elementType: 1
+        separator: Please select an Element Type from the dropdown.
+        originalPath: Assets/Create/Audio Mixer
+        overridePath: New/Audio/Audio Mixer
+    0000001A:
+      type: {class: ProjectMenuItem, ns: CommonGames.Tools.CustomMenuLayout, asm: CommonGames.EditorTools}
+      data:
+        elementType: 2
+        separator: Please select an Element Type from the dropdown.
+        originalPath: 
+        overridePath: 
+    0000001B:
+      type: {class: ProjectMenuItem, ns: CommonGames.Tools.CustomMenuLayout, asm: CommonGames.EditorTools}
+      data:
+        elementType: 1
+        separator: Please select an Element Type from the dropdown.
+        originalPath: Assets/Create/Common-Games/Audio Events/Simple
+        overridePath: New/Audio/Simple AudioEvent
+    0000001C:
+      type: {class: ProjectMenuItem, ns: CommonGames.Tools.CustomMenuLayout, asm: CommonGames.EditorTools}
+      data:
+        elementType: 1
+        separator: Please select an Element Type from the dropdown.
+        originalPath: Assets/Create/Common-Games/Audio Events/Composite
+        overridePath: New/Audio/Composite AudioEvent
+    0000001D:
+      type: {class: ProjectMenuItem, ns: CommonGames.Tools.CustomMenuLayout, asm: CommonGames.EditorTools}
+      data:
+        elementType: 2
+        separator: Please select an Element Type from the dropdown.
+        originalPath: 
+        overridePath: 
+    0000001E:
+      type: {class: ProjectMenuItem, ns: CommonGames.Tools.CustomMenuLayout, asm: CommonGames.EditorTools}
+      data:
+        elementType: 1
+        separator: Please select an Element Type from the dropdown.
+        originalPath: Assets/Rename
+        overridePath: Edit/Rename
+    0000001F:
+      type: {class: ProjectMenuItem, ns: CommonGames.Tools.CustomMenuLayout, asm: CommonGames.EditorTools}
+      data:
+        elementType: 1
+        separator: Please select an Element Type from the dropdown.
+        originalPath: Assets/Delete
+        overridePath: Edit/Delete
+    00000020:
+      type: {class: ProjectMenuItem, ns: CommonGames.Tools.CustomMenuLayout, asm: CommonGames.EditorTools}
+      data:
+        elementType: 2
+        separator: Please select an Element Type from the dropdown.
+        originalPath: 
+        overridePath: 
+    00000021:
+      type: {class: ProjectMenuItem, ns: CommonGames.Tools.CustomMenuLayout, asm: CommonGames.EditorTools}
+      data:
+        elementType: 1
+        separator: Please select an Element Type from the dropdown.
+        originalPath: Assets/Reimport
+        overridePath: Edit/Re-Import
+    00000022:
+      type: {class: ProjectMenuItem, ns: CommonGames.Tools.CustomMenuLayout, asm: CommonGames.EditorTools}
+      data:
+        elementType: 1
+        separator: Please select an Element Type from the dropdown.
+        originalPath: Assets/Reimport All
+        overridePath: Edit/Re-Import All
+    00000023:
+      type: {class: ProjectMenuItem, ns: CommonGames.Tools.CustomMenuLayout, asm: CommonGames.EditorTools}
+      data:
+        elementType: 2
+        separator: Please select an Element Type from the dropdown.
+        originalPath: 
+        overridePath: 
+    00000024:
+      type: {class: ProjectMenuItem, ns: CommonGames.Tools.CustomMenuLayout, asm: CommonGames.EditorTools}
+      data:
+        elementType: 1
+        separator: Please select an Element Type from the dropdown.
+        originalPath: Assets/Import Package/Custom Package...
+        overridePath: Packages/Import Package
+    00000025:
+      type: {class: ProjectMenuItem, ns: CommonGames.Tools.CustomMenuLayout, asm: CommonGames.EditorTools}
+      data:
+        elementType: 1
+        separator: Please select an Element Type from the dropdown.
+        originalPath: Assets/Export Package...
+        overridePath: Packages/Export Package
+    00000026:
+      type: {class: ProjectMenuItem, ns: CommonGames.Tools.CustomMenuLayout, asm: CommonGames.EditorTools}
+      data:
+        elementType: 2
+        separator: Please select an Element Type from the dropdown.
+        originalPath: 
+        overridePath: 
+    00000027:
+      type: {class: ProjectMenuItem, ns: CommonGames.Tools.CustomMenuLayout, asm: CommonGames.EditorTools}
+      data:
+        elementType: 1
+        separator: Please select an Element Type from the dropdown.
+        originalPath: Assets/Select Dependencies
+        overridePath: Packages/Select Dependencies
+    00000028:
+      type: {class: ProjectMenuItem, ns: CommonGames.Tools.CustomMenuLayout, asm: CommonGames.EditorTools}
+      data:
+        elementType: 2
+        separator: Please select an Element Type from the dropdown.
+        originalPath: 
+        overridePath: 
+    00000029:
+      type: {class: ProjectMenuItem, ns: CommonGames.Tools.CustomMenuLayout, asm: CommonGames.EditorTools}
+      data:
+        elementType: 1
+        separator: Please select an Element Type from the dropdown.
+        originalPath: Assets/Copy Path
+        overridePath: File/Copy Path
+    0000002A:
+      type: {class: ProjectMenuItem, ns: CommonGames.Tools.CustomMenuLayout, asm: CommonGames.EditorTools}
+      data:
+        elementType: 1
+        separator: Please select an Element Type from the dropdown.
+        originalPath: Assets/Show in Explorer
+        overridePath: File/Open in Explorer

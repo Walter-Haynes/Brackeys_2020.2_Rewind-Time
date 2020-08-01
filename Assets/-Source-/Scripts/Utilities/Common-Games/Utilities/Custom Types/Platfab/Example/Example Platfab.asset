@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39749a34ba3c2304787ed410c6ae72ba, type: 3}
+  m_Name: Example Platfab
+  m_EditorClassIdentifier: 
+  prefabs:
+  - asset: {fileID: 100000, guid: f36c148914c8e05498dad1ca7becaa2e, type: 3}
+    platforms: 1
+  - asset: {fileID: 4874267740670570193, guid: d5768b405a37164428f157645a27de1c, type: 3}
+    platforms: 8
