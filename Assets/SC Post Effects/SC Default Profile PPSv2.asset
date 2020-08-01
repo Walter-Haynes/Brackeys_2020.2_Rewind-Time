@@ -675,9 +675,21 @@ MonoBehaviour:
   enabled:
     overrideState: 1
     value: 1
-  amount:
+  hsvMode:
     overrideState: 0
-    value: 0.5
+    value: 0
+  levels:
+    overrideState: 0
+    value: 256
+  hue:
+    overrideState: 0
+    value: 256
+  saturation:
+    overrideState: 0
+    value: 256
+  value:
+    overrideState: 0
+    value: 256
 --- !u!114 &114145671331809480
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -702,7 +714,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b94fcd11afffcb142908bfcb1e261fba, type: 3}
   m_Name: MotionBlur
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   enabled:
     overrideState: 1
     value: 1
@@ -1704,7 +1716,7 @@ MonoBehaviour:
     value: 0
   postExposure:
     overrideState: 1
-    value: 0
+    value: 0.5
   contrast:
     overrideState: 1
     value: 0
