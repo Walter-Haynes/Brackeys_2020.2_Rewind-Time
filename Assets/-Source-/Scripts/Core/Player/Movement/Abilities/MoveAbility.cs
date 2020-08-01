@@ -14,7 +14,9 @@ namespace Core.Player.Movement.Abilities
         [Range(0, .3f)] [SerializeField] private float movementSmoothing = .05f;
         
         private Vector3 _velocity = Vector3.zero;
-
+        private float _input = 0;
+        
+        /*
         [ValueDropdown(nameof(_moveDirections))]
         [BoxGroup("Box")] 
         [SerializeField] private Vector3 moveDirection = Vector3.zero;
@@ -26,8 +28,7 @@ namespace Core.Player.Movement.Abilities
             {"Y (Vertical)", Vector3.up},
             {"Z (Depth)", Vector3.right},
         };
-
-        private float _input = 0;
+        */
 
         public override void AbilityUpdate()
         {

@@ -34,7 +34,7 @@ namespace CommonGames.Utilities.Extensions
         /// <summary>
         /// If bool is true, execute action.
         /// </summary>
-        public static void If(this bool b, Action action)
+        public static void If(this bool b, in Action action)
         {
             if(b)
             {
@@ -42,12 +42,10 @@ namespace CommonGames.Utilities.Extensions
             }
         }
 
-        /// <summary>
-        /// Executes the first action on true, the other on false.
-        /// </summary>
-        public static void IfElse(this bool b, Action onTrue, Action onFalse)
+        /// <summary> Executes the first action on true, the second on false. </summary>
+        public static void IfElse(this bool checkIfTrue, in Action onTrue, in Action onFalse)
         {
-            if(b)
+            if(checkIfTrue)
             {
                 onTrue();
             }
@@ -85,7 +83,7 @@ namespace CommonGames.Utilities.Extensions
         /// <summary>
         /// Execute target function i times, with the index as overload.
         /// </summary>
-        public static void For(this int i, Action<int> action)
+        public static void For(this int i, in Action<int> action)
         {
             for(int __j = 0; __j < i; __j++)
             {
@@ -272,6 +270,8 @@ namespace CommonGames.Utilities.Extensions
         [PublicAPI]
         public static T TryGetIfNull<T>(this T obj, in GameObject context) where T : Component
         {
+            if(obj != null) return obj;
+
             context.TryGetComponent(component: out T __returnedObject);
             return __returnedObject;
         }
