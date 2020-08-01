@@ -31,9 +31,9 @@ namespace Core.Player
             => _playerCamera;
         
         [BoxGroup("Core")] 
-        [SerializeField] private Rigidbody _rigidbody = null;
+        [SerializeField] private Rigidbody2D _rigidbody = null;
         [PublicAPI]
-        public Rigidbody PlayerRigidbody
+        public Rigidbody2D PlayerRigidbody2D
             => _rigidbody = _rigidbody.TryGetIfNull(context: this);
 
         #endregion
@@ -55,6 +55,13 @@ namespace Core.Player
         #endregion
 
         #region Methods
+
+        private void Reset()
+        {
+            _playerCamera = Camera.main;
+
+            _rigidbody = PlayerRigidbody2D;
+        }
         
         #endregion
     }
