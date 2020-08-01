@@ -1476,53 +1476,37 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  startRecording:
-    m_Name: Start Recording
+  toggleRecord:
+    m_Name: Toggle Record
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: d3e1e273-7de1-41b4-a15e-ffa4e9203146
+    m_Id: b1e42c13-37f1-4357-9f5c-a756a72be5f5
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: deb33d70-e1da-4599-b0aa-56060a1bc819
+      m_Id: d82b9fb7-098e-4f4c-8687-a57d947cb46f
       m_Path: <Keyboard>/1
       m_Interactions: 
       m_Processors: 
       m_Groups: 
-      m_Action: Start Recording
+      m_Action: Toggle Record
       m_Flags: 0
-  stopRecording:
-    m_Name: Stop Recording
+  toggleReplay:
+    m_Name: Toggle Replay
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 32a53464-814b-45a2-af29-c61ba2dbbba5
+    m_Id: 0bdde955-bf6e-4083-8670-6106d284a671
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: 4349d06c-c19f-414c-83a6-331f14ca8c91
-      m_Path: <Keyboard>/2
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Stop Recording
-      m_Flags: 0
-  playRecording:
-    m_Name: Play Recording
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 37577afc-d9f8-4414-a4d5-f58fdec5a016
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 999f25c8-ce76-4578-95ca-a9db4fc00a59
+      m_Id: 36ee3d8b-296e-4e4d-a7d2-f71f89310b4d
       m_Path: <Keyboard>/enter
       m_Interactions: 
       m_Processors: 
       m_Groups: 
-      m_Action: Play Recording
+      m_Action: Toggle Replay
       m_Flags: 0
 --- !u!1 &1142839242
 GameObject:

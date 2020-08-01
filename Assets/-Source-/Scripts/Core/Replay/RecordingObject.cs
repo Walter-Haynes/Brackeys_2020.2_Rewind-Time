@@ -12,30 +12,21 @@ namespace Core.Replay
     {
 
         #region Variables
-
-        private Rigidbody2D _rigidbody2D;
-
-        private List<RecordingFrame> _recordingFrames = new List<RecordingFrame>();
-
-        private bool
-            _isRecording = false,
-            _isReplaying = false;
-
-        #endregion
         
-        #region ReplayObject
-
         //[ShowIf(nameof(_usePrefab))]
         [AssetsOnly]
         [SerializeField] private GameObject replayPrefab;
         
-        private Rigidbody2D _replayObject;
-        
-        private bool _usePrefab = false;
+        private Rigidbody2D 
+            _recordingRigidbody, 
+            _replayRigidbody;
 
-        [ContextMenu(itemName: "Toggle Prefab Usage")]
-        private void ToggleUsePrefab()
-            => _usePrefab = !_usePrefab;
+        private List<RecordingFrame> _recordingFrames = new List<RecordingFrame>();
+        private int _currentReplayFrameIndex = 0;
+
+        private bool
+            _isRecording = false,
+            _isReplaying = false;
 
         #endregion
 
@@ -43,22 +34,48 @@ namespace Core.Replay
 
         private void Reset()
         {
-            _rigidbody2D = _rigidbody2D.TryGetIfNull(context: this);
+            _recordingRigidbody = _recordingRigidbody.TryGetIfNull(context: this);
         }
 
         private void Start()
         {
-            //_recordingFrames = default;
-
-            _rigidbody2D = _rigidbody2D.TryGetIfNull(context: this);
+            _recordingRigidbody = _recordingRigidbody.TryGetIfNull(context: this);
 
             if(!RecordingManager.InstanceExists) return;
 
-            RecordingManager.Instance.StartRecording_Event      += StartRecording;
-            RecordingManager.Instance.StopRecording_Event       += StopRecording;
-            RecordingManager.Instance.TogglePlayRecording_Event += TogglePlayRecording;
+            RecordingManager.Instance.ToggleRecord_Event += ToggleRecord;
+            RecordingManager.Instance.ToggleReplay_Event += ToggleReplay;
+        }
+        
+        private void FixedUpdate()
+        {
+            if(_isRecording && !_isReplaying)
+            {
+                RecordFrame();
+            }
+
+            if(_isReplaying && !_isRecording)
+            {
+                CreateReplayObject();
+
+                PlayFrame();
+            }
         }
 
+        #region Recording
+
+        private void ToggleRecord()
+        {
+            if(!_isRecording)
+            {
+                StartRecording();   
+            }
+            else
+            {
+                StopRecording();   
+            }
+        }
+        
         private void StartRecording()
         {
             CGDebug.PlayDing();
@@ -76,19 +93,37 @@ namespace Core.Replay
             _isRecording = false;
         }
 
-        private void TogglePlayRecording()
+        
+        
+        private void RecordFrame()
+        {
+            if(_replayRigidbody)
+            {
+                _replayRigidbody.isKinematic = false;   
+            }
+
+            Transform __transform = transform;
+            _recordingFrames.Add(item: new RecordingFrame(position: __transform.position, rotation: __transform.rotation));
+        }
+
+
+        #endregion
+
+        #region Replaying
+
+        private void ToggleReplay()
         {
             if(!_isReplaying)
             {
-                StartPlayRecording();
+                StartReplaying();
             }
             else
             {
-                StopPlayRecording();
+                StopReplaying();
             }
         }
 
-        private void StartPlayRecording()
+        private void StartReplaying()
         {
             CGDebug.PlayDing();
 
@@ -96,7 +131,7 @@ namespace Core.Replay
 
             _isReplaying = true;
         }
-        private void StopPlayRecording()
+        private void StopReplaying()
         {
             CGDebug.PlayDing();
 
@@ -106,55 +141,22 @@ namespace Core.Replay
 
             _currentReplayFrameIndex = 0;
         }
-
-
-        private void FixedUpdate()
-        {
-            if(_isRecording && !_isReplaying)
-            {
-                CGDebug.Log("Record");
-
-                RecordFrame();
-            }
-
-            if(_isReplaying && !_isRecording)
-            {
-                CGDebug.Log("Replay");
-
-                CreateReplayObject();
-
-                PlayFrame();
-            }
-        }
-
-        private void RecordFrame()
-        {
-            if(_replayObject)
-            {
-                _replayObject.isKinematic = false;   
-            }
-
-            Transform __transform = transform;
-            _recordingFrames.Add(item: new RecordingFrame(position: __transform.position, rotation: __transform.rotation));
-        }
-
-        private int _currentReplayFrameIndex = 0;
-
+        
+        
+        
         private void PlayFrame()
         {
-            _replayObject.isKinematic = true;
+            _replayRigidbody.isKinematic = true;
 
             if(_currentReplayFrameIndex >= _recordingFrames.Count)
             {
-                StopPlayRecording();
+                StopReplaying();
                 return;
             }
 
             RecordingFrame __frame = _recordingFrames[index: _currentReplayFrameIndex];
 
-            //foreach(RecordingFrame __frame in _recordingFrames)
-
-            Transform __transform = _replayObject.transform;
+            Transform __transform = _replayRigidbody.transform;
 
             __transform.position = __frame.Position;
             __transform.rotation = __frame.Rotation;
@@ -163,18 +165,20 @@ namespace Core.Replay
 
         }
 
+        #endregion
+
         private void CreateReplayObject()
         {
             //Use this object to replay 
             if(!replayPrefab)
             {
-                _replayObject = this._rigidbody2D;
+                _replayRigidbody = this._recordingRigidbody;
             }
-            else if(_replayObject == null || _replayObject == this._rigidbody2D)
+            else if(!_replayRigidbody || _replayRigidbody == this._recordingRigidbody)
             {
                 if(Instantiate(original: replayPrefab).TryGetComponent(out Rigidbody2D __spawnedRigidbody))
                 {
-                    _replayObject = __spawnedRigidbody;
+                    _replayRigidbody = __spawnedRigidbody;
                 }
                 else
                 {
@@ -184,5 +188,6 @@ namespace Core.Replay
         }
 
         #endregion
+        
     }
 }

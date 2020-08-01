@@ -13,43 +13,37 @@ namespace Core.Replay
     {
         #region Variables
 
-        [SerializeField] private InputAction startRecording, stopRecording, playRecording;
+        [SerializeField] private InputAction toggleRecord, toggleReplay;
 
         [PublicAPI]
-        public event Action StartRecording_Event, StopRecording_Event, TogglePlayRecording_Event;
+        public event Action ToggleRecord_Event, ToggleReplay_Event;
 
         #endregion
 
         private void Awake()
         {
-            startRecording.started += OnStartRecordingEvent;
-            stopRecording.started += OnStopRecordingEvent;
-            playRecording.started += OnPlayRecordingEvent;
+            toggleRecord.started += OnToggleRecord;
+            toggleReplay.started += OnToggleReplay;
         }
 
         protected override void OnEnable()
         {
             base.OnEnable();
 
-            startRecording.Enable();
-            stopRecording.Enable();
-            playRecording.Enable();
+            toggleRecord.Enable();
+            toggleReplay.Enable();
         }
 
         protected override void OnDisable()
         {
-            startRecording.Disable();
-            stopRecording.Disable();
-            playRecording.Disable();
+            toggleRecord.Disable();
+            toggleReplay.Disable();
         }
 
-        private void OnStartRecordingEvent(InputAction.CallbackContext ctx)
-            => StartRecording_Event?.Invoke();
+        private void OnToggleRecord(InputAction.CallbackContext ctx)
+            => ToggleRecord_Event?.Invoke();
 
-        private void OnStopRecordingEvent(InputAction.CallbackContext ctx)
-            => StopRecording_Event?.Invoke();
-
-        private void OnPlayRecordingEvent(InputAction.CallbackContext ctx)
-            => TogglePlayRecording_Event?.Invoke();
+        private void OnToggleReplay(InputAction.CallbackContext ctx)
+            => ToggleReplay_Event?.Invoke();
     }
 }
