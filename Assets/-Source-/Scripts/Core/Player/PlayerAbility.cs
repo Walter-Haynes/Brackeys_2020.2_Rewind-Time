@@ -7,13 +7,13 @@ using JetBrains.Annotations;
 using Sirenix.OdinInspector;
 #endif
 
-namespace Core.Player.GenericAbilitySystem.Example.RAB
+namespace Core.Player
 {
     using CommonGames.Utilities.Helpers;
     
     using GenericAbilitySystem;
 
-    public abstract class PlayerAbility : PlayerBehaviour, IAbility
+    public abstract partial class PlayerAbility : PlayerBehaviour, IAbility
     {
         #region Variables
 
@@ -22,7 +22,6 @@ namespace Core.Player.GenericAbilitySystem.Example.RAB
         [BoxGroup("Box", showLabel: false)]
 
         [BoxGroup("Box/Input", showLabel: false)]
-        //[ValueDropdown(nameof(InputNames))]
         [LabelText("Input")]
         [SerializeField] protected InputAction _inputAction;
 
