@@ -2,12 +2,11 @@
 
 using UnityEngine;
 
-using JetBrains.Annotations;
-
 namespace Core.Replay
 {
     using CommonGames.Utilities.CGTK;
     using CommonGames.Utilities.Extensions;
+    using Sirenix.OdinInspector;
 
     public class RecordingObject : MonoBehaviour
     {
@@ -22,20 +21,21 @@ namespace Core.Replay
             _isRecording = false,
             _isReplaying = false;
 
-        private struct RecordingFrame
-        {
-            [PublicAPI]
-            public Vector2 Position;
+        #endregion
+        
+        #region ReplayObject
 
-            [PublicAPI]
-            public Quaternion Rotation;
+        //[ShowIf(nameof(_usePrefab))]
+        [AssetsOnly]
+        [SerializeField] private GameObject replayPrefab;
+        
+        private Rigidbody2D _replayObject;
+        
+        private bool _usePrefab = false;
 
-            public RecordingFrame(in Vector2 position, in Quaternion rotation)
-            {
-                this.Position = position;
-                this.Rotation = rotation;
-            }
-        }
+        [ContextMenu(itemName: "Toggle Prefab Usage")]
+        private void ToggleUsePrefab()
+            => _usePrefab = !_usePrefab;
 
         #endregion
 
@@ -54,8 +54,8 @@ namespace Core.Replay
 
             if(!RecordingManager.InstanceExists) return;
 
-            RecordingManager.Instance.StartRecording_Event += StartRecording;
-            RecordingManager.Instance.StopRecording_Event += StopRecording;
+            RecordingManager.Instance.StartRecording_Event      += StartRecording;
+            RecordingManager.Instance.StopRecording_Event       += StopRecording;
             RecordingManager.Instance.TogglePlayRecording_Event += TogglePlayRecording;
         }
 
@@ -96,7 +96,6 @@ namespace Core.Replay
 
             _isReplaying = true;
         }
-
         private void StopPlayRecording()
         {
             CGDebug.PlayDing();
@@ -122,25 +121,30 @@ namespace Core.Replay
             {
                 CGDebug.Log("Replay");
 
+                CreateReplayObject();
+
                 PlayFrame();
             }
         }
 
         private void RecordFrame()
         {
-            _rigidbody2D.isKinematic = false;
+            if(_replayObject)
+            {
+                _replayObject.isKinematic = false;   
+            }
 
             Transform __transform = transform;
-            _recordingFrames.Add(item: new RecordingFrame(__transform.position, __transform.rotation));
+            _recordingFrames.Add(item: new RecordingFrame(position: __transform.position, rotation: __transform.rotation));
         }
 
         private int _currentReplayFrameIndex = 0;
 
         private void PlayFrame()
         {
-            _rigidbody2D.isKinematic = true;
+            _replayObject.isKinematic = true;
 
-            if(_currentReplayFrameIndex > _recordingFrames.Count)
+            if(_currentReplayFrameIndex >= _recordingFrames.Count)
             {
                 StopPlayRecording();
                 return;
@@ -150,14 +154,33 @@ namespace Core.Replay
 
             //foreach(RecordingFrame __frame in _recordingFrames)
 
-            Transform __transform = transform;
+            Transform __transform = _replayObject.transform;
 
             __transform.position = __frame.Position;
             __transform.rotation = __frame.Rotation;
-
-
+            
             _currentReplayFrameIndex++;
 
+        }
+
+        private void CreateReplayObject()
+        {
+            //Use this object to replay 
+            if(!replayPrefab)
+            {
+                _replayObject = this._rigidbody2D;
+            }
+            else if(_replayObject == null || _replayObject == this._rigidbody2D)
+            {
+                if(Instantiate(original: replayPrefab).TryGetComponent(out Rigidbody2D __spawnedRigidbody))
+                {
+                    _replayObject = __spawnedRigidbody;
+                }
+                else
+                {
+                    Debug.LogError(message: "Prefab doesn't have a Rigidbody2D!!");
+                }
+            }
         }
 
         #endregion
