@@ -876,6 +876,7 @@ MonoBehaviour:
       m_Action: Input
       m_Flags: 8
   movementSpeed: 10
+  movementSmoothing: 0.05
   moveDirection: {x: 0, y: 0, z: 1}
 --- !u!114 &1142839248
 MonoBehaviour:
@@ -905,7 +906,15 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Input
       m_Flags: 0
-  jumpSpeed: 5
+    - m_Name: 
+      m_Id: ac90634c-c6b0-4044-9358-18741c855bc5
+      m_Path: <Keyboard>/w
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Input
+      m_Flags: 0
+  jumpSpeed: 200
 --- !u!1 &1681010947
 GameObject:
   m_ObjectHideFlags: 0

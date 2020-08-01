@@ -44,8 +44,9 @@ namespace Core.Player.Movement.Abilities
 
             Rigidbody2D __rigidbody = SystemCore.PlayerRigidbody2D;
 
-            Vector2 __currVelocity = __rigidbody.velocity;
-            Vector3 __targetVelocity = new Vector2(_input * 10f, __currVelocity.y);
+            Vector2 __currVelocity = _velocity = __rigidbody.velocity;
+            Vector3 __targetVelocity = new Vector2(_input * (movementSpeed), __currVelocity.y);
+            
             // And then smoothing it out and applying it to the character
             __rigidbody.velocity = Vector3.SmoothDamp(current: __currVelocity, __targetVelocity, ref _velocity , movementSmoothing);
         }
