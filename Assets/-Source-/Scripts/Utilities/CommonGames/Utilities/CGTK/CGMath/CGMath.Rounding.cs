@@ -54,22 +54,22 @@
         public static float RoundToMultipleOf(float value, float multiple)
             => multiple.Approximately(0) ? value : (value / multiple).Round() * multiple;
 
-        public static int NearestMultipleOf(int value, int multiple)
+        public static int NearestMultipleOf(int value, in int multiple)
         {
-            int mod = value % multiple;
-            float midPoint = multiple / 2.0f;
+            int __mod = value % multiple;
+            float __midPoint = multiple / 2.0f;
 
-            if (mod > midPoint)
+            if (__mod > __midPoint)
             {
-                return value + (multiple - mod);
+                return value + (multiple - __mod);
             }
             else
             {
-                return value - mod;
+                return value - __mod;
             }
         }
 
-        public static int RoundToMultipleIntOf(float value, int multiple)
+        public static int RoundToMultipleIntOf(float value, in int multiple)
             => (multiple == 0) ? value.RoundToInt() : (value / multiple).RoundToInt() * multiple;
 
         //return (value % 0.5f).Approximately(0) ? Mathf.Ceil(value) : Mathf.Floor(value);
