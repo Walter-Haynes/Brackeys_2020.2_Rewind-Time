@@ -47,7 +47,7 @@ namespace CommonGames.Utilities
 		}
 
 		/// <summary> OnDestroy method to clear Singleton association </summary>
-		protected virtual void OnDestroy()
+		protected virtual void OnDisable()
 		{
 			if (Instance == this)
 			{

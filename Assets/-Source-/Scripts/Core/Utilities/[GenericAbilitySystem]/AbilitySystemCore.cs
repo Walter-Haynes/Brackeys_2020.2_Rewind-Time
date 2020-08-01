@@ -6,6 +6,7 @@ using JetBrains.Annotations;
 
 namespace Core.Player.GenericAbilitySystem
 {
+    using System;
     using Sirenix.OdinInspector;
     
     using CommonGames.Utilities.Extensions;
@@ -89,6 +90,11 @@ namespace Core.Player.GenericAbilitySystem
         }
         
         #endregion
+
+        [PublicAPI]
+        public T GetBehaviour<T>()
+            where T : AbilitySystemBehaviour<TCore>
+            => AbilitySystemBehaviours.Get(func: ability => ability is T) as T;
 
         #endregion
     }
